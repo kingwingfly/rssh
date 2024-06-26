@@ -1,0 +1,25 @@
+[package]
+name = "rssh"
+version = "0.0.1-alpha1"
+edition = "2021"
+authors = ["Louis <836250617@qq.com>"]
+description = "A ssh tool which \"remember\" your ssh history for faster connection."
+license = "MIT"
+keywords = ["ssh", "tool"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+clap = { version = "4.5.7", features = ["derive"] }
+snafu = { version = "0.8.3" }
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+const_format = "0.2"
+cliclack = "0.3.1"
+encrypt_config = { version = "0.3", features = [
+    "persist",
+    "derive",
+    "default_config_dir",
+] }
+
+[build-dependencies]
+vergen = { version = "8.3", features = ["git", "rustc", "gitcl"] }
