@@ -85,6 +85,10 @@ pub(crate) fn manage_entries(entries: &mut HashSet<Entry>) -> Result<()> {
     loop {
         let mut entry = match take_entry(entries) {
             Ok(entry) => entry,
+            Err(Error::NoEntry) => {
+                outro("No entry found; Change saved").map_err(|_| Error::InteractiveInput)?;
+                return Ok(());
+            }
             Err(_) => {
                 outro("Change saved").map_err(|_| Error::InteractiveInput)?;
                 return Ok(());
@@ -119,9 +123,10 @@ pub(crate) fn manage_entries(entries: &mut HashSet<Entry>) -> Result<()> {
                 entry.connect();
                 return Ok(());
             }
-            _ => {
+            3 => {
                 entries.insert(entry);
             }
+            _ => {}
         }
     }
 }
