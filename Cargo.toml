@@ -3,7 +3,7 @@ name = "rssh"
 version = "0.0.1-alpha3"
 edition = "2021"
 authors = ["Louis <836250617@qq.com>"]
-description = "A ssh tool which \"remember\" your ssh history for faster connection."
+description = "A ssh tool which \"remember\"s your ssh history for faster connection."
 license = "MIT"
 keywords = ["ssh", "tool"]
 

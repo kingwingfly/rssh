@@ -6,7 +6,7 @@ A ssh tool which "remember" your ssh history for faster connection.
 You can download at [release page](https://github.com/kingwingfly/rssh/releases).
 
 ```
-A ssh tool which "remember" your ssh history for faster connection.
+A ssh tool which "remember"s your ssh history for faster connection.
 
 Usage: rssh [COMMAND]
 
