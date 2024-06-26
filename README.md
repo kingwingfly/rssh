@@ -1,5 +1,5 @@
 # rssh
-A ssh tool which "remember" your ssh history for faster connection.
+A ssh tool which "remember"s your ssh history for faster connection.
 
 # Usage
 
