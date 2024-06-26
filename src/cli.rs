@@ -1,5 +1,5 @@
 use crate::{
-    action::{choose_entry, new_entry_iteractive},
+    action::{choose_entry, manage_entries, new_entry_iteractive},
     config::{config, RsshConfig},
     error::Result,
 };
@@ -26,7 +26,10 @@ pub struct Cli {
 
 #[derive(Subcommand)]
 enum SubCmd {
+    /// New a ssh entry and connect.
     New,
+    /// Manage ssh entries.
+    Manage,
 }
 
 impl Cli {
@@ -41,6 +44,10 @@ impl Cli {
                 let mut rssh_config = config.get_mut::<RsshConfig>().unwrap();
                 rssh_config.insert(entry.clone());
                 entry.connect();
+            }
+            Some(SubCmd::Manage) => {
+                let mut rssh_config = config.get_mut::<RsshConfig>().unwrap();
+                manage_entries(rssh_config.entries_mut())?;
             }
             None => {
                 let rssh_config = config.get::<RsshConfig>().unwrap();

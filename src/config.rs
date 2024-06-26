@@ -1,6 +1,7 @@
 use crate::rssh_core::Entry;
 use encrypt_config::{Config, PersistSource};
 use serde::{Deserialize, Serialize};
+use std::collections::HashSet;
 
 pub(crate) fn config() -> Config {
     let mut config = Config::new();
@@ -11,16 +12,20 @@ pub(crate) fn config() -> Config {
 #[derive(Default, Serialize, Deserialize, PersistSource)]
 #[source(name = "rssh.json")]
 pub(crate) struct RsshConfig {
-    entries: Vec<Entry>,
+    entries: HashSet<Entry>,
 }
 
 impl RsshConfig {
     pub(crate) fn insert(&mut self, entry: Entry) {
-        self.entries.push(entry);
+        self.entries.insert(entry);
     }
 
-    pub(crate) fn entries(&self) -> &Vec<Entry> {
+    pub(crate) fn entries(&self) -> &HashSet<Entry> {
         &self.entries
+    }
+
+    pub(crate) fn entries_mut(&mut self) -> &mut HashSet<Entry> {
+        &mut self.entries
     }
 }
 
@@ -33,6 +38,7 @@ mod tests {
     fn test_config() {
         let config = config();
         let rssh_config = config.get::<RsshConfig>().unwrap();
+        dbg!(RsshConfig::path());
         dbg!(rssh_config.entries());
     }
 }

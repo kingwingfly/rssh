@@ -1,7 +1,7 @@
 use crate::error::{Error, Result};
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Clone)]
+#[derive(Serialize, Deserialize, Clone, Hash, PartialEq, Eq)]
 #[cfg_attr(test, derive(Debug))]
 pub(crate) struct Args {
     user: User,
@@ -37,7 +37,7 @@ impl Args {
     }
 }
 
-#[derive(Serialize, Deserialize, Clone)]
+#[derive(Serialize, Deserialize, Clone, Hash, PartialEq, Eq)]
 #[cfg_attr(test, derive(Debug))]
 pub(crate) struct User(String);
 
@@ -58,7 +58,7 @@ impl AsRef<str> for User {
     }
 }
 
-#[derive(Serialize, Deserialize, Clone)]
+#[derive(Serialize, Deserialize, Clone, Hash, PartialEq, Eq)]
 #[cfg_attr(test, derive(Debug))]
 pub(crate) struct HostName(String);
 
@@ -79,7 +79,7 @@ impl AsRef<str> for HostName {
     }
 }
 
-#[derive(Serialize, Deserialize, Clone)]
+#[derive(Serialize, Deserialize, Clone, Hash, PartialEq, Eq)]
 #[cfg_attr(test, derive(Debug))]
 pub(crate) struct Port(String);
 

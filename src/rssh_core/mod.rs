@@ -7,7 +7,7 @@ use crate::error::Result;
 use args::Args;
 use client::Client;
 
-#[derive(Serialize, Deserialize, Clone)]
+#[derive(Serialize, Deserialize, Clone, Hash, PartialEq, Eq)]
 #[cfg_attr(test, derive(Debug))]
 pub struct Entry {
     client: Client,
@@ -38,6 +38,10 @@ impl Entry {
             .stdout(std::process::Stdio::inherit())
             .status()
             .expect("Failed to execute command");
+    }
+
+    pub(crate) fn client(&self) -> &str {
+        self.client.as_str()
     }
 
     pub(crate) fn hostname(&self) -> &str {

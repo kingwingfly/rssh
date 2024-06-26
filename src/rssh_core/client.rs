@@ -2,7 +2,7 @@ use crate::error::{Error, Result};
 use serde::{Deserialize, Serialize};
 use std::{ffi::OsStr, path::PathBuf};
 
-#[derive(Serialize, Deserialize, Clone)]
+#[derive(Serialize, Deserialize, Clone, Hash, PartialEq, Eq)]
 #[cfg_attr(test, derive(Debug))]
 pub(crate) struct Client(PathBuf);
 
@@ -23,6 +23,10 @@ impl Client {
 
     pub(crate) fn new_unchecked(path: PathBuf) -> Self {
         Client(path)
+    }
+
+    pub(crate) fn as_str(&self) -> &str {
+        self.0.to_str().unwrap()
     }
 }
 
