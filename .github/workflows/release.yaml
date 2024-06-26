@@ -16,6 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: install cargo components
+        run: rustup component add clippy
+      - name: test
+        run: .github/scripts/test.sh
       - uses: taiki-e/create-gh-release-action@v1
         with:
           # (optional) Path to changelog.
