@@ -10,7 +10,7 @@ pub(crate) fn config() -> Config {
 }
 
 #[derive(Default, Serialize, Deserialize, PersistSource)]
-#[source(name = "rssh.json")]
+#[source(name = "rssh/rssh.json")]
 pub(crate) struct RsshConfig {
     entries: HashSet<Entry>,
 }
@@ -34,7 +34,7 @@ mod tests {
     use super::*;
 
     #[test]
-    #[ignore = "This test needs human read to ensure the correctness"]
+    // #[ignore = "This test needs human read to ensure the correctness"]
     fn test_config() {
         let config = config();
         let rssh_config = config.get::<RsshConfig>().unwrap();
