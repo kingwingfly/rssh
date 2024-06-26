@@ -25,6 +25,9 @@ pub(crate) fn new_entry_iteractive() -> Result<Entry> {
 }
 
 pub(crate) fn choose_entry(entries: &[Entry]) -> Result<&Entry> {
+    if entries.is_empty() {
+        return Err(Error::NoEntry);
+    }
     let chosen = Select::new("Choose")
         .items(
             &entries

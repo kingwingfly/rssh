@@ -21,4 +21,6 @@ pub enum Error {
     Config {
         source: encrypt_config::error::ConfigError,
     },
+    #[snafu(display("No entry to choose, create with `rssh new`"))]
+    NoEntry,
 }
