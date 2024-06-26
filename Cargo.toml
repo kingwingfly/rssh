@@ -23,3 +23,10 @@ encrypt_config = { version = "0.3", features = [
 
 [build-dependencies]
 vergen = { version = "8.3", features = ["git", "rustc", "gitcl"] }
+
+[profile.release]
+lto = "fat"
+opt-level = 3
+codegen-units = 1
+strip = "debuginfo"
+panic = "abort"
