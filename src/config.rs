@@ -1,5 +1,5 @@
 use crate::rssh_core::Entry;
-use encrypt_config::{Config, PersistSource};
+use encrypt_config::{Config, SecretSource};
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 
@@ -9,8 +9,8 @@ pub(crate) fn config() -> Config {
     config
 }
 
-#[derive(Default, Serialize, Deserialize, PersistSource)]
-#[source(name = "rssh/rssh.json")]
+#[derive(Default, Serialize, Deserialize, SecretSource)]
+#[source(name = "rssh/rssh.json", keyring_entry = "rssh")]
 pub(crate) struct RsshConfig {
     entries: HashSet<Entry>,
 }
