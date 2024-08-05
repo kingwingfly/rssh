@@ -17,14 +17,14 @@ const_format = "0.2"
 cliclack = "0.3.2"
 
 [target.'cfg(target_os = "linux")'.dependencies]
-encrypt_config = { version = "0.3", features = [
+encrypt_config = { version = "0.5", features = [
     "full",
     "default_config_dir",
     "linux-secret-service",
 ] }
 
 [target.'cfg(not(target_os = "linux"))'.dependencies]
-encrypt_config = { version = "0.3", features = ["full", "default_config_dir"] }
+encrypt_config = { version = "0.5", features = ["full", "default_config_dir"] }
 
 [profile.dev.package.num-bigint-dig]
 opt-level = 3
