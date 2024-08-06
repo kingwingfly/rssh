@@ -41,21 +41,20 @@ impl Cli {
         match args.subcmd {
             Some(SubCmd::New) => {
                 let entry = new_entry_iteractive()?;
-                let mut rssh_config = config.get_mut::<RsshConfig>().unwrap();
+                let mut rssh_config = config.get_mut::<RsshConfig>();
                 rssh_config.insert(entry.clone());
                 entry.connect();
             }
             Some(SubCmd::Manage) => {
-                let mut rssh_config = config.get_mut::<RsshConfig>().unwrap();
+                let mut rssh_config = config.get_mut::<RsshConfig>();
                 manage_entries(rssh_config.entries_mut())?;
             }
             None => {
-                let rssh_config = config.get::<RsshConfig>().unwrap();
+                let rssh_config = config.get::<RsshConfig>();
                 let entry = choose_entry(rssh_config.entries())?;
                 entry.connect();
             }
         }
-        config.save::<RsshConfig>()?;
         Ok(())
     }
 }

@@ -9,6 +9,11 @@ Note: In this file, do not use the hard wrap in the middle of a sentence for com
 -->
 
 ## [Unreleased]
+## [0.0.1] - 2024-08-06
+
+- bump dependencies
+
+
 ## [0.0.1-alpha6] - 2024-06-27
 
 - encrypt the config

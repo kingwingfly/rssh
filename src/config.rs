@@ -4,9 +4,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 
 pub(crate) fn config() -> Config {
-    let mut config = Config::new();
-    config.load_source::<RsshConfig>();
-    config
+    Config::default()
 }
 
 #[derive(Default, Serialize, Deserialize, SecretSource)]
@@ -37,7 +35,7 @@ mod tests {
     // #[ignore = "This test needs human read to ensure the correctness"]
     fn test_config() {
         let config = config();
-        let rssh_config = config.get::<RsshConfig>().unwrap();
+        let rssh_config = config.get::<RsshConfig>();
         dbg!(RsshConfig::path());
         dbg!(rssh_config.entries());
     }
