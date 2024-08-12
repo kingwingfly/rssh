@@ -14,7 +14,7 @@ snafu = { version = "0.8.4" }
 tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
 const_format = "0.2"
-cliclack = "0.3.2"
+cliclack = "0.3.3"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 encrypt_config = { version = "0.5", features = [
