@@ -286,9 +286,9 @@ checksum = "a357d28ed41a50f9c765dbfe56cbc04a64e53e5fc58ba79fbc34c10ef3df831f"
 
 [[package]]
 name = "encrypt_config"
-version = "1.0.0"
+version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "478cd46d96726a2dfa53e2b8c594a7d597cef50700094f67fccbfc46e5256c28"
+checksum = "f2e5aea058e0fdb24aa13233a185b1e1ba4a97ea6957328801c00122caa40447"
 dependencies = [
  "dirs",
  "encrypt_config_derive",
@@ -303,9 +303,9 @@ dependencies = [
 
 [[package]]
 name = "encrypt_config_derive"
-version = "1.0.0"
+version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "948a838c72f1c4593b82676a0ee4543ba579c6de8de61993e167f50c84a3738b"
+checksum = "6f958ae437f9da5e36e652e27b8e371796fcfb5dda7abb6531fc3def580e7468"
 dependencies = [
  "quote",
  "syn 2.0.74",
@@ -770,7 +770,7 @@ dependencies = [
 
 [[package]]
 name = "rssh"
-version = "0.0.2"
+version = "0.0.3"
 dependencies = [
  "clap",
  "cliclack",
