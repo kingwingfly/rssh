@@ -3,7 +3,7 @@ use encrypt_config::{Config, SecretSource};
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 
-pub(crate) fn config() -> Config {
+pub(crate) fn config() -> Config<1> {
     Config::default()
 }
 

@@ -1,6 +1,6 @@
 [package]
 name = "rssh"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2021"
 authors = ["Louis <836250617@qq.com>"]
 description = "A ssh tool which \"remember\"s your ssh history for faster connection."
@@ -15,7 +15,7 @@ tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
 const_format = "0.2"
 cliclack = "0.3.3"
-encrypt_config = { version = "1.0.0", features = [
+encrypt_config = { version = "1.0.1", features = [
     "full",
     "default_config_dir",
 ] }
