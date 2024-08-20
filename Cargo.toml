@@ -15,7 +15,7 @@ tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
 const_format = "0.2"
 cliclack = "0.3.3"
-encrypt_config = { version = "1.0.1", features = [
+encrypt_config = { version = "1.0.4", features = [
     "full",
     "default_config_dir",
 ] }
