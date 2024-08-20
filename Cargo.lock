@@ -286,9 +286,9 @@ checksum = "a357d28ed41a50f9c765dbfe56cbc04a64e53e5fc58ba79fbc34c10ef3df831f"
 
 [[package]]
 name = "encrypt_config"
-version = "1.0.1"
+version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f2e5aea058e0fdb24aa13233a185b1e1ba4a97ea6957328801c00122caa40447"
+checksum = "d11911b2bd4706ccf01cd13b684f47ff1c3f5e89850f49351fe6a9674a02fbf7"
 dependencies = [
  "dirs",
  "encrypt_config_derive",
@@ -303,9 +303,9 @@ dependencies = [
 
 [[package]]
 name = "encrypt_config_derive"
-version = "1.0.1"
+version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6f958ae437f9da5e36e652e27b8e371796fcfb5dda7abb6531fc3def580e7468"
+checksum = "59264ac74bcd84ceac124b25f32a2008fb342ddfc7884bf46f93c243498a745b"
 dependencies = [
  "quote",
  "syn 2.0.74",
