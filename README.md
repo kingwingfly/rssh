@@ -1,6 +1,8 @@
 # rssh
 A ssh tool which "remember"s your ssh history for faster connection.
 
+**The `.ssh/config` should be used instead of this tool. This project is totally a duplicated work**
+
 # Usage
 
 You can download at [release page](https://github.com/kingwingfly/rssh/releases).
